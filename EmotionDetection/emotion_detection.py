@@ -6,7 +6,7 @@ def emotion_detector(text_to_analyse):
     this function ibm watson library to generate emotion response
     based on user text and return. this is for skills network.
     """
-    url = 'https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict'
+    url = ''
     myobj = { "raw_document": { "text": text_to_analyse } }
     header = {"grpc-metadata-mm-model-id": "emotion_aggregated-workflow_lang_en_stock"}
     response = requests.post(url, json = myobj, headers=header)
@@ -37,4 +37,3 @@ def emotion_detector(text_to_analyse):
             'sadness': sadness,
             'dominant_emotion': dominant_emotion_key
         }
-    # return response.text
